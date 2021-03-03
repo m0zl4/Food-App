@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75A45394E838227F5159088D /* Pods_Food_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55220413F870AE20C768CD5B /* Pods_Food_App.framework */; };
+		D6810B9F25EF39B30071ED4C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D6810B9E25EF39B30071ED4C /* SDWebImageSwiftUI */; };
+		D6810BA225EF3D270071ED4C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6810BA125EF3D270071ED4C /* Item.swift */; };
+		D6810BA525EF46350071ED4C /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6810BA425EF46350071ED4C /* ItemView.swift */; };
+		D6DB803825EDEDE00012C357 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6DB803725EDEDE00012C357 /* GoogleService-Info.plist */; };
 		D6FDEAA525ECA634002278AC /* Food_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDEAA425ECA634002278AC /* Food_AppApp.swift */; };
 		D6FDEAA725ECA634002278AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDEAA625ECA634002278AC /* ContentView.swift */; };
 		D6FDEAA925ECA635002278AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FDEAA825ECA635002278AC /* Assets.xcassets */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55220413F870AE20C768CD5B /* Pods_Food_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		681AA77278BB247B5A56EE5D /* Pods-Food App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food App.debug.xcconfig"; path = "Target Support Files/Pods-Food App/Pods-Food App.debug.xcconfig"; sourceTree = "<group>"; };
+		D6810BA125EF3D270071ED4C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D6810BA425EF46350071ED4C /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		D6DB803725EDEDE00012C357 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6FDEAA125ECA634002278AC /* Food App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FDEAA425ECA634002278AC /* Food_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_AppApp.swift; sourceTree = "<group>"; };
 		D6FDEAA625ECA634002278AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +36,7 @@
 		D6FDEAB725ECAA8D002278AC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D6FDEABA25ECAA99002278AC /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		D6FDEABD25ECAAC0002278AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0687D437F5FBBCE8822F855 /* Pods-Food App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food App.release.xcconfig"; path = "Target Support Files/Pods-Food App/Pods-Food App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +44,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6810B9F25EF39B30071ED4C /* SDWebImageSwiftUI in Frameworks */,
+				75A45394E838227F5159088D /* Pods_Food_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FBD5C2DA0E65DE4957D39A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				681AA77278BB247B5A56EE5D /* Pods-Food App.debug.xcconfig */,
+				F0687D437F5FBBCE8822F855 /* Pods-Food App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C248E9A223B7F805C413D600 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55220413F870AE20C768CD5B /* Pods_Food_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D6FDEA9825ECA634002278AC = {
 			isa = PBXGroup;
 			children = (
 				D6FDEAA325ECA634002278AC /* Food App */,
 				D6FDEAA225ECA634002278AC /* Products */,
+				2FBD5C2DA0E65DE4957D39A8 /* Pods */,
+				C248E9A223B7F805C413D600 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +90,7 @@
 		D6FDEAA325ECA634002278AC /* Food App */ = {
 			isa = PBXGroup;
 			children = (
+				D6DB803725EDEDE00012C357 /* GoogleService-Info.plist */,
 				D6FDEAB625ECA679002278AC /* View */,
 				D6FDEAB525ECA670002278AC /* Model */,
 				D6FDEAB425ECA664002278AC /* ViewModel */,
@@ -89,6 +122,7 @@
 		D6FDEAB525ECA670002278AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D6810BA125EF3D270071ED4C /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +132,7 @@
 			children = (
 				D6FDEAB725ECAA8D002278AC /* Home.swift */,
 				D6FDEABA25ECAA99002278AC /* Menu.swift */,
+				D6810BA425EF46350071ED4C /* ItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,15 +144,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6FDEAB025ECA635002278AC /* Build configuration list for PBXNativeTarget "Food App" */;
 			buildPhases = (
+				3CFD972A750DB81799AB195C /* [CP] Check Pods Manifest.lock */,
 				D6FDEA9D25ECA634002278AC /* Sources */,
 				D6FDEA9E25ECA634002278AC /* Frameworks */,
 				D6FDEA9F25ECA634002278AC /* Resources */,
+				6451553DE2C3E89F612D07F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Food App";
+			packageProductDependencies = (
+				D6810B9E25EF39B30071ED4C /* SDWebImageSwiftUI */,
+			);
 			productName = "Food App";
 			productReference = D6FDEAA125ECA634002278AC /* Food App.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +185,9 @@
 				Base,
 			);
 			mainGroup = D6FDEA9825ECA634002278AC;
+			packageReferences = (
+				D6810B9D25EF39B30071ED4C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = D6FDEAA225ECA634002278AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,10 +204,53 @@
 			files = (
 				D6FDEAAC25ECA635002278AC /* Preview Assets.xcassets in Resources */,
 				D6FDEAA925ECA635002278AC /* Assets.xcassets in Resources */,
+				D6DB803825EDEDE00012C357 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CFD972A750DB81799AB195C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Food App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6451553DE2C3E89F612D07F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food App/Pods-Food App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food App/Pods-Food App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Food App/Pods-Food App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6FDEA9D25ECA634002278AC /* Sources */ = {
@@ -175,6 +261,8 @@
 				D6FDEAB825ECAA8D002278AC /* Home.swift in Sources */,
 				D6FDEABB25ECAA99002278AC /* Menu.swift in Sources */,
 				D6FDEABE25ECAAC0002278AC /* HomeViewModel.swift in Sources */,
+				D6810BA525EF46350071ED4C /* ItemView.swift in Sources */,
+				D6810BA225EF3D270071ED4C /* Item.swift in Sources */,
 				D6FDEAA525ECA634002278AC /* Food_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +388,7 @@
 		};
 		D6FDEAB125ECA635002278AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 681AA77278BB247B5A56EE5D /* Pods-Food App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +411,7 @@
 		};
 		D6FDEAB225ECA635002278AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0687D437F5FBBCE8822F855 /* Pods-Food App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -364,6 +454,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D6810B9D25EF39B30071ED4C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D6810B9E25EF39B30071ED4C /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6810B9D25EF39B30071ED4C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D6FDEA9925ECA634002278AC /* Project object */;
 }

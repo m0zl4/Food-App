@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreLocation
+import Firebase
 
 class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
   
@@ -19,11 +20,15 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
   
   @Published var showMenu = false
   
+  @Published var items: [Item] = [] // utk semua data
+  @Published var filtered: [Item] = [] // utk data yg dicari
+  
   func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
     switch manager.authorizationStatus {
     case .authorizedWhenInUse:
       print("authorized")
       self.noLocation = false
+      manager.requestLocation()
     case .denied:
       print("denied")
       self.noLocation = true
@@ -41,6 +46,7 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     self.userLocation = locations.last
     self.extractLocation()
+    self.login()
   }
   
   func extractLocation() {
@@ -52,6 +58,51 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
       address += safeData.first?.name ?? ""
       address += ", "
       address += safeData.first?.locality ?? ""
+      
+      self.userAddress = address
+    }
+  }
+  
+  func login() {
+    Auth.auth().signInAnonymously{ (res, err) in
+      
+      if err != nil{
+        print(err!.localizedDescription)
+        return
+      }
+      
+      print("Success = \(res!.user.uid)")
+      
+      self.fetchData()
+    }
+  }
+  
+  func fetchData() {
+    let db = Firestore.firestore()
+    
+    db.collection("Items").getDocuments{ (snap, err) in
+      guard let itemData = snap else { return }
+      self.items = itemData.documents.compactMap({ (doc) -> Item? in
+        
+        let id = doc.documentID
+        let name = doc.get("item_name") as! String
+        let cost = doc.get("item_cost") as! NSNumber
+        let ratings = doc.get("item_ratings") as! String
+        let image = doc.get("item_image") as! String
+        let details = doc.get("item_details") as! String
+        
+        return Item(id: id, item_name: name, item_cost: cost, item_details: details, item_image: image, item_ratings: ratings)
+      })
+      
+      self.filtered = self.items
+    }
+  }
+  
+  func filterData() {
+    withAnimation(.linear){
+      self.filtered = self.items.filter{
+        return $0.item_name.lowercased().contains(self.search.lowercased())
+      }
     }
   }
 }
